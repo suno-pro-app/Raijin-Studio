@@ -5,6 +5,24 @@
 </head>
 <body>
   <h1>Welcome to Suno Pro Studio!</h1>
-  <button onclick="alert('Generate track clicked')">Generate Track</button>
+  <button id="generateBtn">Generate Track</button>
+
+  <p id="result"></p>
+
+  <script>
+    const btn = document.getElementById("generateBtn");
+    const result = document.getElementById("result");
+
+    btn.onclick = async () => {
+      result.innerText = "Generating track...";
+      try {
+        const response = await fetch("/generate", { method: "POST" });
+        const text = await response.text();
+        result.innerText = text;
+      } catch (err) {
+        result.innerText = "Error generating track";
+      }
+    }
+  </script>
 </body>
 </html>
