@@ -8,4 +8,5 @@ def home():
     return "<h1>Raijin Studio is LIVE 🔥</h1>"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 10000))  # IMPORTANT
+    app.run(host="0.0.0.0", port=port)
