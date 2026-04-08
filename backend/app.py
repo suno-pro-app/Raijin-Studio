@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Raijin Studio is LIVE 🔥"
+    return "<h1>Raijin Studio is LIVE 🔥</h1>"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
